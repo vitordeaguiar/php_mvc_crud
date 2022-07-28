@@ -4,7 +4,6 @@ namespace App\Http;
 
 use \Closure;
 use \Exception;
-use Reflection;
 use \ReflectionFunction;
 
 class Router{

@@ -17,11 +17,17 @@ $obRouter->get('/sobre', [
     }
 ]);
 
+//Rota get Depoimentos
+$obRouter->get('/depoimentos', [
+    function(){
+        return new Response(200,Pages\Testimony::getTestimonies());
+    }
+]);
 
-//Rota Dinamica
-$obRouter->get('/pagina/{idPagina}/{acao}', [
-    function($idPagina,$acao){
-        return new Response(200,'Página'.$idPagina.' - '.$acao);
+//Rota Depoimentos insert
+$obRouter->post('/depoimentos', [
+    function($request){
+        return new Response(200,Pages\Testimony::getTestimonies());
     }
 ]);
 

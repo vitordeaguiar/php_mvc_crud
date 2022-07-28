@@ -5,8 +5,12 @@ require __DIR__.'/vendor/autoload.php';
 
 use App\Http\Router;
 use App\Utils\View;
+use \WilliamCosta\DotEnv\Environment;
 
-define('URL','http://localhost/php_mvc_crud');
+//Carrega Variaveis de Ambiente
+Environment::load(__DIR__);
+
+define('URL', getenv('URL'));
 
 //Define valor padrão das variaveis
 View::init([
