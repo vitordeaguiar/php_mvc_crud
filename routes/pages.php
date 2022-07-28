@@ -27,7 +27,7 @@ $obRouter->get('/depoimentos', [
 //Rota Depoimentos insert
 $obRouter->post('/depoimentos', [
     function($request){
-        return new Response(200,Pages\Testimony::getTestimonies());
+        return new Response(200,Pages\Testimony::insertTestimony($request));
     }
 ]);
 
