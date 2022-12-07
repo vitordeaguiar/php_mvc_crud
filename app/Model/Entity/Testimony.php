@@ -22,7 +22,7 @@ class Testimony{
        //Define a data
        $this->data = date('Y-m-d H:i:s');
 
-       //inseti o depoimento no banco de dados
+       //inseri o depoimento no banco de dados
        $this->id = (new Database('depoimentos')) ->insert([
         'nome' => $this->nome,
         'mensagem' => $this->mensagem,
@@ -30,5 +30,10 @@ class Testimony{
        ]);
        //Sucesso
        return true;
+    }
+
+    // Método responsavel por retornar depoimentos
+    public static function getTestimonies($where = null, $order = null, $limit = null, $fields = '*'){
+        return(new Database('depoimentos')) ->select($where,$order,$limit,$fields);
     }
 }
